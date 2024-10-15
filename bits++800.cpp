@@ -7,9 +7,8 @@ int main(){
     while(t--){
         string s;
         cin>>s;
-      if(s[1]=='-') cnt--;
-      else cnt++;
-      
-      cout<<cnt<<endl;
+      if(s[1]=='+') cnt++;
+      else cnt--;
     }
+       cout<<cnt<<endl;
 }
