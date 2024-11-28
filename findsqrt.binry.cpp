@@ -1,3 +1,5 @@
+// find the square root by applying binary search algo
+
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -25,6 +27,4 @@ freopen("output.txt", "w", stdout);
             start = mid + 1;
         }
     }
-
-    return 0;
 }
