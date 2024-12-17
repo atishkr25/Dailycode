@@ -1,0 +1,2 @@
+After Sorting Array: 
+9 4 7 6 3 1 5 
