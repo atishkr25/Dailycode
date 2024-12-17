@@ -19,7 +19,6 @@ using namespace std;
         }
        }
        else return;
-      
  }
 int main()
 {
