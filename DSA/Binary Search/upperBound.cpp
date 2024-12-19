@@ -26,7 +26,8 @@ int main()
 
  int num; cin>>num;
 
- int ans = getupperBnd(a, num);
- cout<< ans << " " << a[ans] << endl;
+int ans = getupperBnd(a, num);
+cout << ans << " " << (ans == -1 ? -1 : a[ans]) << endl;
+
 
 }
