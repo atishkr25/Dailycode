@@ -40,3 +40,21 @@ Node* convert2DLL(vector<int> &a){
     }
     return head;
 }
+Node* DeleteTail(Node* head){
+  if(head==NULL || head->next == NULL) return NULL;
+  Node* ptr = head;
+  while(ptr->next!=NULL){
+    ptr = ptr->next;
+  }
+  Node* prev = ptr->back;
+  ptr->back = nullptr;
+  prev->next = nullptr;
+
+  return head;
+}
+
+int main(){
+  vector<int> a = {12,14,17,20,22};
+  Node* head = convert2DLL(a);
+  print(DeleteTail(head));
+}
