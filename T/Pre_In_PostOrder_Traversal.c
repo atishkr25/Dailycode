@@ -55,13 +55,13 @@ int main(){
     root->left->right = makeNode('E'); 
 
     //aplying diff operations 
-    PreOrderTraversal(root);
+    printf("Preoder Traversal: ", PreOrderTraversal(root) );
     printf("\n\n"); 
 
-    InOrderTraversal(root); 
+    printf("Inorder Traversal: ", InOrderTraversal(root) );
     printf("\n\n"); 
 
-    PostOrderTraversal(root); 
+    printf("Postorder Traversal: ", PostOrderTraversal(root) ); 
     printf("\n\n"); 
 
 }
