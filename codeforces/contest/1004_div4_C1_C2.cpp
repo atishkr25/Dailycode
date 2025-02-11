@@ -16,6 +16,7 @@ using namespace std;
 
 #define fr(i, a, b) for (ll i = a; i < b; i++)
 
+//aplying lower bound to get minimum possible element which is greater than equals to prev
 ll lowerBound(vll &vec, ll x) {
     auto it = lower_bound(vec.begin(), vec.end(), x);
     return ((it != vec.end()) ? *it : -1);
