@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Generator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Invoice Generator</h1>
+    <form id="invoiceForm">
+      <label for="customerName">Customer Name:</label>
+      <input type="text" id="customerName" required>
+
+      <label for="invoiceDate">Invoice Date:</label>
+      <input type="date" id="invoiceDate" required>
+
+      <h3>Add Items</h3>
+      <div id="items">
+        <div class="item">
+          <input type="text" placeholder="Item Name" class="itemName" required>
+          <input type="number" placeholder="Quantity" class="itemQuantity" required>
+          <input type="number" placeholder="Price" class="itemPrice" required>
+          <button type="button" class="removeItem">Remove</button>
+        </div>
+      </div>
+      <button type="button" id="addItem">Add Item</button>
+      <button type="submit">Generate Invoice</button>
+    </form>
+
+    <div id="invoiceOutput" class="hidden">
+      <h2>Invoice</h2>
+      <p><strong>Customer Name:</strong> <span id="outputCustomerName"></span></p>
+      <p><strong>Invoice Date:</strong> <span id="outputInvoiceDate"></span></p>
+      <table id="invoiceTable">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3"><strong>Grand Total</strong></td>
+            <td id="grandTotal">0</td>
+          </tr>
+        </tfoot>
+      </table>
+      <button id="downloadPDF">Download as PDF</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

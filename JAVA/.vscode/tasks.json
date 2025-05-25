@@ -1,0 +1,10 @@
+// {
+//     "version": "2.0.0",
+//     "tasks": [
+//         {
+//             "label": "showCustomMessage",
+//             "type": "shell",
+//             "command": "echo ===== My Custom Terminal ===== && echo Author: Atish && echo ========================"
+//         }
+//     ]
+// }

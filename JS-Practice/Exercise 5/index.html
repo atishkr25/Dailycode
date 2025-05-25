@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    hello
+</body>
+<script>
+    let nums = [];
+    let input; 
+
+    while(true)
+    {
+        input = parseInt(prompt("Enter a number (0 to stop): "))
+        input = Number(input);
+
+        if(input === 0) break;
+
+        nums.push(input);
+    }
+
+    nums.sort((a,b) => (b-a));
+    console.log("Final array: ", nums);
+</script>
+</html>

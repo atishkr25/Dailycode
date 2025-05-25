@@ -1,0 +1,4 @@
+This is java file handling programm
+written in input.txt
+
+Sunny dancer Gorakpur,

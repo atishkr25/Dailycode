@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">CLICK</button>
+</body>
+<script>
+    // const btn = document.querySelector("#btn");
+    // btn.addEventListener('click', () =>{
+    //     alert('button is clicked');
+    // })
+
+    // const clr_change_text = document.querySelector("#clr-change");
+    // // const clr =  style.backgroundColor;
+    // clr_change_text.addEventListener('click', ()=> {
+    //     document.body.style.backgroundColor = "red";
+    // })
+
+    const btn = document.querySelector("#btn");
+    btn.addEventListener('click', () => {
+        let ptag = document.createElement('p');
+        ptag.innerHTML = 'This is a paragraph';
+        document.body.appendChild(ptag);
+    })
+</script>
+</html>
