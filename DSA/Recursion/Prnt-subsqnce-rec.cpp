@@ -30,7 +30,7 @@ void PrntSubsequense(int i, vi &ds, vi &a, int n) {
 }
 void sol()
 {
-    vi a = {3,1,2};
+    vi a = {3, 1, 2, 6};
     int n = a.size();
     vi ds;
     PrntSubsequense(0, ds, a, n);
