@@ -14,7 +14,8 @@ using namespace std;
 #define vll vector<ll>
  
 #define fr(i, a, b) for (ll i = a; i < b; i++)
-
+//Printing All Possible Subsequences of a given array
+//Printing All Possible Subsequences of a given array
 void PrntSubsequense(int i, vi &ds, vi &a, int n) {
     if(i >= n){
         for(auto x : ds){
