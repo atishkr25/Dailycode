@@ -1,18 +1,25 @@
-#include<bits/stdc++.h>
-using namespace std;   
+#include <bits/stdc++.h>
+using namespace std;
+
+#define nl endl
+#define ll long long int
+#define all(v) v.begin(), v.end()
+#define rall(v) v.rbegin(), v.rend()
+#define pb push_back
+#define f first
+#define s second
+
+void solve() {
+    
+}
 
 int main() {
-    int t; cin>>t;
-    while(t--) {
-        int n; cin>>n;
-        vector<int> a(n+1);
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-        for(int i=1; i<=n; i++) cin>>a[i];
-
-        int ans = 0;
-        for(int i=1; i<=n; i++) {
-            ans = gcd(ans, abs(a[i]-i));
-        }
-        cout<<ans<<endl;
+    int t = 1;
+    // cin >> t; // uncomment if multiple test cases
+    while (t--) {
+        solve();
     }
 }
