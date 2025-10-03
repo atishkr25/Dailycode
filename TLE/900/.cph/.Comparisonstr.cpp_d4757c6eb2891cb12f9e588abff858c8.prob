@@ -1,0 +1,1 @@
+{"name":"Local: Comparisonstr","url":"d:\\CP\\TLE\\900\\Comparisonstr.cpp","tests":[{"id":1758080724336,"input":"5\n4\n<<>>\n4\n>><<\n5\n>>>>>\n7\n<><><><\n8\n><>>><<>","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\CP\\TLE\\900\\Comparisonstr.cpp","group":"local","local":true}
