@@ -19,8 +19,8 @@ void solve() {
     }
     else {
         ll maxi = n/4;
-        ll mini = ceil((n*1.0)/6);
-        cout<<mini <<" "<<maxi<<nl;
+        ll mini = (n+6-1)/6;
+        cout<<mini<<" "<<maxi<<nl;
     }
 
 
