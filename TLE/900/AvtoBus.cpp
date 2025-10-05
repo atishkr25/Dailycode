@@ -13,19 +13,15 @@ using namespace std;
 void solve() {
     ll n; cin>>n;
 
-    if(n%4 != 0 && n%6 != 0){
+    if(n<4 || n&1 == 1){
         cout<<-1<<nl; 
         return;
     }
-    if(n%4==0 && n%6==0)
-    {
-        ll mini1 = min(n/4, n/6);
-        ll maxi1 = max(n/4, n/6);
-
-        cout<<mini1<<" "<<maxi1<<nl;
+    else {
+        ll maxi = n/4;
+        ll mini = ceil((n*1.0)/6);
+        cout<<mini <<" "<<maxi<<nl;
     }
-    else if(n/4 == 0) cout<<n/4<<" "<<n/4<< nl;
-    else cout<<n/6<<" "<< n/6<< nl;
 
 
 }
