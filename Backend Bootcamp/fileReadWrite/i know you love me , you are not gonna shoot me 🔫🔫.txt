@@ -1,0 +1,2 @@
+You found the secret file!
+This content was read because "input.txt" pointed to this filename.
