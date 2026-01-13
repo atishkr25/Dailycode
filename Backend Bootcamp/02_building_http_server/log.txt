@@ -1,6 +1,7 @@
-1768078204109 : / : New Request Recieved 
-1768078204135 : /favicon.ico : New Request Recieved 
-1768078216793 : /about : New Request Recieved 
-1768078216808 : /favicon.ico : New Request Recieved 
-1768078226884 : /about : New Request Recieved 
-1768078226906 : /favicon.ico : New Request Recieved 
+1768078954141 : /about : New Request Recieved 
+1768078954157 : /favicon.ico : New Request Recieved 
+1768078965113 : /.well-known/appspecific/com.chrome.devtools.json : New Request Recieved 
+1768079001185 : /about : New Request Recieved 
+1768079001210 : /favicon.ico : New Request Recieved 
+1768079001587 : /about : New Request Recieved 
+1768079001605 : /favicon.ico : New Request Recieved 

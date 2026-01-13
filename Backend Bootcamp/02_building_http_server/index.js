@@ -10,11 +10,11 @@ const myServer = http.createServer((req , res)=>{
             case '/' : res.end("Home ");
             break;
 
-            case '/about' : res.end("hey, atish this side");
+            case '/about' : res.end("hey, atish ");
             break;
 
             default:
-                res.end("404 Not Found");
+                res.end("404 Not Found")
 
         }
         
