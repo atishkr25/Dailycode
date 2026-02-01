@@ -53,6 +53,10 @@ app.get('/api/users/:id', (req, res) => {
 app.post('/api/users', (req, res) => {
   const body = req.body;
 
+  if(!body || !body.first_name || !body.last_name || !body.email || !body.gender || !body.job_title) {
+    return res.status(400).json({msg : 'all the fields are required'})
+  }
+  
   const newId = users.length + 1;
   const newUser = {id: newId ,  ...body, };
 
