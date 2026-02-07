@@ -1,11 +1,30 @@
-# Node
+############################
+# Node / JS
+############################
 node_modules/
+npm-debug.log*
+yarn-error.log*
 
-# Env
+############################
+# Environment
+############################
 .env
 
-# OS
+############################
+# OS / Editor junk
+############################
 .DS_Store
+.vscode/
+tempCodeRunnerFile.*
 
-#not including cph anymore😬
+############################
+# CP Helper (VS Code CP extension)
+############################
 .cph/
+
+############################
+# Text outputs (optional)
+############################
+output.txt
+input.txt
+log.txt
