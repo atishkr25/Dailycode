@@ -13,6 +13,7 @@ void findUnion(vector<int> &a, vector<int> &b) {
     }
 
     
+    
     for (auto it : st) {
         cout << it << " ";
     }
