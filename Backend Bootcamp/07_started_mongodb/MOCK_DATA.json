@@ -1,0 +1,10 @@
+[
+    {
+        "id": 1,
+        "first_name": "Dummy",
+        "last_name": "User",
+        "email": "dummy@example.com",
+        "gender": "Male",
+        "job_title": "Tester"
+    }
+]
