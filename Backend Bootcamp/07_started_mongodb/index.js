@@ -1,6 +1,6 @@
 const express = require('express');
 const fs = require('fs');
-const users = require('./MOCK_DATA.json');
+// const users = require('./MOCK_DATA.json');
 const { json } = require('stream/consumers');
 const mongoose = require('mongoose');
 const { type } = require('os');
@@ -38,7 +38,7 @@ const userSchema = new mongoose.Schema({
     },
 });
 
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("user", userSchema);
 module.exports = User;
 
 
@@ -78,10 +78,12 @@ app.get('/api/users', async (req, res) => {
 });
 
 app.get('/api/users/:id', async (req, res) => {
+    if (!mongoose.isValidObjectId(req.params.id)) {
+        return res.status(400).json({ error: "Invalid User ID" });
+    }
     const user = await User.findById(req.params.id);
-
+    if (!user) return res.status(404).json({ error: "User not found" });
     return res.json(user);
-
 })
 
 //Handling POST request 
@@ -112,53 +114,19 @@ app.post('/api/users', async (req, res) => {
 
 
 app.route('/api/users/:id')
-    .patch((req, res) => { // patch means partially changes in data or database
-        const id = Number(req.params.id);
-        const body = req.body;
-
-        const userIndex = users.findIndex(user => user.id === id);
-
-        if (userIndex === -1) {
-            return res.status(404).json({ message: 'User not found' });
+    .patch(async (req, res) => {
+        if (!mongoose.isValidObjectId(req.params.id)) {
+            return res.status(400).json({ error: "Invalid User ID" });
         }
-
-        users[userIndex] = {
-            ...users[userIndex],
-            ...body
-        };
-
-        fs.writeFile('./MOCK_DATA.json', JSON.stringify(users), (err) => {
-            if (err) {
-                return res.status(500).json({ message: 'Failed to update user' });
-            }
-
-            return res.json({
-                status: 'success',
-                user: users[userIndex]
-            });
-        });
+        await User.findByIdAndUpdate(req.params.id, { lastName: req.body.last_name });
+        return res.json({ msg: 'Success' });
     })
-
-    .delete((req, res) => {
-        const id = Number(req.params.id);
-        const userIndex = users.findIndex(u => u.id === id);
-
-        if (userIndex === -1) {
-            return res.status(404).json({ message: "User not found" });
+    .delete(async (req, res) => {
+        if (!mongoose.isValidObjectId(req.params.id)) {
+            return res.status(400).json({ error: "Invalid User ID" });
         }
-
-        users.splice(userIndex, 1);
-
-        fs.writeFile('./MOCK_DATA.json', JSON.stringify(users), (err) => {
-            if (err) {
-                return res.status(500).json({ message: "Failed to delete user" });
-            }
-
-            return res.json({
-                status: "success",
-                message: "User deleted successfully"
-            });
-        });
+        await User.findByIdAndDelete(req.params.id);
+        return res.json({ msg: "User deleted successfully" });
     });
 
 
