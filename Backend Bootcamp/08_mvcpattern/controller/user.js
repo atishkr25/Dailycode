@@ -17,9 +17,8 @@ const handleGetUsersById = async (req, res) => {
     return res.json(user);
 } 
 
-const handleCreateUser = async (req, res) => {
+const handleCreateNewUser = async (req, res) => {
     const body = req.body;
-
     if (!body ||
         !body.first_name ||
         !body.last_name ||
@@ -29,7 +28,6 @@ const handleCreateUser = async (req, res) => {
 
         return res.status(400).json({ msg: 'all the fields are required' })
     }
-
     const result = await User.create({
         firstName: body.first_name,
         lastName: body.last_name,
@@ -39,22 +37,19 @@ const handleCreateUser = async (req, res) => {
         jobTitle: body.job_title,
     });
 
-    return res.status(201).json({ msg: 'user created into mongodb database' });
+    return res.status(201).json({ msg: 'user created into mongodb database', id:result._id });
 };
 
 const handleUpdateUserById = async (req, res) => {
     const { id } = req.params;
-
     if (!mongoose.isValidObjectId(id)) {
         return res.status(400).json({ error: "Invalid User ID" });
     }
-
     await User.findByIdAndUpdate(
         id,
         { lastName: req.body.last_name },
         { new: true }
     );
-
     return res.json({ msg: 'User updated successfully' });
 };
 
@@ -73,7 +68,7 @@ const handleDeleteUserById = async (req, res) => {
 module.exports = {
     handleGetAllusers,
     handleGetUsersById,
-    handleCreateUser,
+    handleCreateNewUser,
     handleUpdateUserById,
     handleDeleteUserById,
      

@@ -20,7 +20,7 @@ connectMongodb("mongodb://127.0.0.1:27017/mycollections_01");
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use("log.txt");
+app.use(logReqRes("log.txt"));
 
 // Routes 
 app.use('/api/users', userRouter); 

@@ -1,20 +1,28 @@
 const express = require ('express');
-
 const router = express.Router();
 
+const {
+    handleGetAllusers,
+    handleGetUsersById, // get
+    handleCreateNewUser, // create
+    handleUpdateUserById, // update
+    handleDeleteUserById // delete   
+} = require('../controller/user');
 
 
 //REST API - JSON
 router.get('/', handleGetAllusers);
 
-router.get('/:id', handleGetAllusersById)
+router.get('/:id', handleGetUsersById)
 
 //Handling POST request 
-router.post('/', handleCreateUser);
+router.post('/', handleCreateNewUser);
 
 
 router.route('/:id')
-    .patch(handleupdateUserById)
+    .patch(ehbgeu3hdhhgsubei
+        
+    )
     .delete(handleDeleteUserById);
 
     module.exports = router;
