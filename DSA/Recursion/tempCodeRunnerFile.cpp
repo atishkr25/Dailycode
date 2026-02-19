@@ -1,2 +1,1 @@
-
-// #define s second
+// remove last element
