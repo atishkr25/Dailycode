@@ -21,6 +21,7 @@ void PreOrderTraversal(Node* tree) {
         PreOrderTraversal(tree->left);
         PreOrderTraversal(tree->right);
     }
+    return;
 }
 
 // In-order traversal: LDR
@@ -30,6 +31,7 @@ void InOrderTraversal(Node* tree) {
         cout << tree->data << " ";
         InOrderTraversal(tree->right);
     }
+    return ;
 }
 
 // Post-order traversal: LRD
@@ -39,6 +41,7 @@ void PostOrderTraversal(Node* tree) {
         PostOrderTraversal(tree->right);
         cout << tree->data << " ";
     }
+    return;
 }
 
 int main() {
