@@ -21,20 +21,17 @@ using namespace std;
 void Allpermutation(vector<int>& ds, vector<vector<int>>& ans, 
                     vector<int>& freq, vector<int>& a, int n) {
     
-    if(ds.size() == n){
+    if(ds.size()==n) {
         ans.push_back(ds);
         return;
     }
-
-    for(int i = 0; i < n; i++){
-        if(freq[i] == 0){
-            ds.push_back(a[i]);     // pick element
-            freq[i] = 1;            // mark as used
-            
+    for(int i=0; i<n; i++){
+        if(freq[i] == -1){
+            freq[i]=1;
+            ds.push_back(a[i]);
             Allpermutation(ds, ans, freq, a, n);
-            
-            freq[i] = 0;            // backtrack
-            ds.pop_back();          // remove last element
+            ds.pop_back();
+            freq[i]=-1;
         }
     }
 }
@@ -45,7 +42,7 @@ void sol() {
     
     vector<vector<int>> ans;
     vector<int> ds;
-    vector<int> freq(n, 0);
+    vector<int> freq(n, -1);
     
     Allpermutation(ds, ans, freq, a, n);
 
