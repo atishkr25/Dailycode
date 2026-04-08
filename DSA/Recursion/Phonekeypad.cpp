@@ -17,7 +17,7 @@ using namespace std;
 #define fr(i, a, b) for (int i = a; i < b; i++)
 #define frr(i, a, b) for (int i = a; i > b; i--)
 
-void solve(int i, string ds, vector<string> &ans, string s, int n, map<char, string>mp){
+void solve(int i, string ds, vector<string> &ans, string s, int n, unordered_map<char, string>mp){
     if(i == n){
         ans.pb(ds);
         return;
@@ -34,7 +34,7 @@ void sol() {
     int n = s.size();
     string ds = "";
     vector<string> ans;
-    map<char,string> mp = {
+    unordered_map<char,string> mp = {
         {'2',"abc"}, {'3',"def"}, {'4',"ghi"},
         {'5',"jkl"}, {'6',"mno"}, {'7',"pqrs"},
         {'8',"tuv"}, {'9',"wxyz"}
