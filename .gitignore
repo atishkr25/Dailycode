@@ -28,3 +28,8 @@ tempCodeRunnerFile.*
 output.txt
 input.txt
 log.txt
+
+############################
+# DSA compiled binaries
+############################
+DSA/**/*.bin
